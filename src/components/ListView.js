@@ -7,14 +7,9 @@ export default function ListView(props) {
   // console.log('ListView_props', props);
   // console.log('ListView_props.items', props.items);
   const { items } = props;
+  const shopItem = items.map((item) => <ShopItem key={uuidv4()} item={item} />);
 
-  return (
-    <div className="list">
-      {items.map((item) => (
-        <ShopItem key={uuidv4()} item={item} />
-      ))}
-    </div>
-  );
+  return <div className="list">{shopItem}</div>;
 }
 
 ListView.propTypes = {

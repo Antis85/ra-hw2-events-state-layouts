@@ -6,12 +6,10 @@ import CardsView from './CardsView';
 
 export default function Store(props) {
   const [icon, setIcon] = useState('view_list');
-  // const [icon, setIcon] = useState('view_module');
-  // const icon = "view_list";
   const { products } = props;
   // console.log('Store_props ', props);
   // console.log('Store_props.products ', props.products);
-  const onSwitch = () => {        
+  const onSwitch = () => {
     // console.log('switch');
     setIcon((prevIcon) => {
       // console.log('Store_onSwitch_prevIcon', prevIcon);
@@ -20,7 +18,7 @@ export default function Store(props) {
     });
   };
   // console.log('Store_icon', icon);
-  return (    
+  return (
     <>
       <IconSwitch icon={icon} onSwitch={onSwitch} />
       {icon === 'view_list' ? <ListView items={products} /> : null}
